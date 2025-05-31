@@ -80,13 +80,20 @@ def mostrar_informacion(datos):
 # Verifica si el script se está ejecutando directamente
 
 if __name__ == "__main__":
-    pokemon = input("Ingresa el nombre del Pokémon: ") # Solicita al usuario que ingrese el nombre del Pokémon
-    pokemon = pokemon.lower().strip() # Convierte el nombre del Pokémon a minúsculas y elimina espacios en blanco al inicio y al final
-    if not pokemon:
-        print("No se ha ingresado un Pokémon. Intenta nuevamente.")
-    elif not pokemon.isalpha():
-        print("El nombre del Pokémon debe contener solo letras. Intenta nuevamente.")
-        exit()
+    while True: # Bucle para solicitar al usuario que ingrese el nombre del Pokémon
+        
+        pokemon = input("Ingresa el nombre del Pokémon: ") # Solicita al usuario que ingrese el nombre del Pokémon
+        pokemon = pokemon.lower().strip() # Convierte el nombre del Pokémon a minúsculas y elimina espacios en blanco al inicio y al final
+        if not pokemon:
+            print("No se ha ingresado un Pokémon. Intenta nuevamente.")
+        elif not pokemon.isalpha():
+            print("El nombre del Pokémon debe contener solo letras. Intenta nuevamente.")
+            exit()
 
-    obten_pokemon(pokemon)
+        obten_pokemon(pokemon)
+        continuar = input("¿Deseas buscar otro Pokémon? (s/n): ").lower().strip()
+        if continuar != 's':
+            print("Gracias por usar el programa. ¡Hasta luego!")
+            break
+    # Fin del bucle
    
