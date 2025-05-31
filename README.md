@@ -7,7 +7,7 @@
 
  Se verifica que el estado de respuesta de la appi sea exitoso y que exista el pokemon ingresado
 
- Asegúrate de tener instalado: PIP , matplotlib y pandas
+ Asegúrate de tener instalado: requests, pillow , matplotlib y pandas, 
  
 El archivo json se almacena dentro de la carpeta pokedex con el nombre de pokemon.json
 
