@@ -53,26 +53,29 @@ def mostrar_informacion(datos):
 
     pokemonlist = [datos['name'].capitalize(), url_imagen ,peso, tamano, movimientos, habilidades, tipos] # crea una lista con la información del Pokémon
 
-    s = pd.Series(pokemonlist, index=['Nombre', 'URLImagen', 'Peso', 'Tamaño', 'Movimientos', 'Habilidades', 'Tipos']) # crea una Serie de pandas con la información del Pokémon
-
-    df= pd.DataFrame([s]).to_json('pokedex/pokemon.json', index=False)# guarda la información del Pokémon en un archivo JSON
-
+    with open('pokedex/pokemon.json', 'w') as f:
+        s = pd.Series(pokemonlist, index=['Nombre', 'URLImagen', 'Peso', 'Tamano', 'Movimientos', 'Habilidades', 'Tipos']) # crea una Serie de pandas con la información del Pokémon
+        pokemonlist = s.to_dict() # convierte la Serie a un diccionario
+        json.dump(pokemonlist, f, indent=4)
+    
     fg, ax = plt.subplots(figsize=(7, 5)) # crea una figura y un eje para el gráfico
-    imagenbox = OffsetImage(imagen, zoom=0.3) # crea un objeto OffsetImage con la imagen del Pokémon
+    imagenbox = OffsetImage(imagen, zoom=0.4) # crea un objeto OffsetImage con la imagen del Pokémon
     ab = AnnotationBbox(imagenbox, (0.2, 0.5), frameon=False) # crea un objeto AnnotationBbox para colocar la imagen en el gráfico
     ax.add_artist(ab) # añade la imagen al eje del gráfico
 
     # Dibuja un rectángulo alrededor de la imagen
     ax.text(0.6, 0.1, f"Nombre: {datos['name'].capitalize()}\n"
-                     f"Peso: {datos['weight']/10:.1f} kg\n"
-                     f"Tamaño: {datos['height']/10:.1f} m\n"
-                     f"Movimientos: {'\n '.join(movimientos)}\n"
+                     f"Peso:{datos['weight']/10:.1f} kg\n"
+                     f"Tamaño:{datos['height']/10:.1f} m\n"
+                     f"Movimientos:\n {'\n '.join(movimientos)}\n"
                      f"Habilidades: {', '.join(habilidades)}\n"
                      f"Tipos: {', '.join(tipos)}",
+                fontsize=9
+
     )
     # Desactivsa los ejes y muestra el título
     ax.axis('off')
-    plt.title(f"Información de {datos['name'].capitalize()}", fontsize=20, fontweight='bold') # establece el título del gráfico
+    plt.title(f"Información de {datos['name'].capitalize()}", fontsize=18, fontweight='bold') # establece el título del gráfico
 
     #muestra el gráfico
     plt.show()
@@ -96,4 +99,3 @@ if __name__ == "__main__":
             print("Gracias por usar el programa. ¡Hasta luego!")
             break
     # Fin del bucle
-   

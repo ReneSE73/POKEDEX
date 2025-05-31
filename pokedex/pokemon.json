@@ -1,1 +1,30 @@
-{"Nombre":{"0":"Pikachu"},"URLImagen":{"0":"https:\/\/raw.githubusercontent.com\/PokeAPI\/sprites\/master\/sprites\/pokemon\/other\/official-artwork\/25.png"},"Peso":{"0":60},"Tama\u00f1o":{"0":4},"Movimientos":{"0":["mega-punch","pay-day","thunder-punch","slam","double-kick","mega-kick","headbutt","body-slam","take-down","double-edge","tail-whip","growl","surf","submission","counter"]},"Habilidades":{"0":["static","lightning-rod"]},"Tipos":{"0":["electric"]}}
+{
+    "Nombre": "Pikachu",
+    "URLImagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    "Peso": 60,
+    "Tamano": 4,
+    "Movimientos": [
+        "mega-punch",
+        "pay-day",
+        "thunder-punch",
+        "slam",
+        "double-kick",
+        "mega-kick",
+        "headbutt",
+        "body-slam",
+        "take-down",
+        "double-edge",
+        "tail-whip",
+        "growl",
+        "surf",
+        "submission",
+        "counter"
+    ],
+    "Habilidades": [
+        "static",
+        "lightning-rod"
+    ],
+    "Tipos": [
+        "electric"
+    ]
+}
