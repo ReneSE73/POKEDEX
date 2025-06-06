@@ -8,7 +8,7 @@ import json # Importa la librería json para manejar datos en formato JSON
 import pandas as pd # Importa pandas para manejar datos en forma de DataFrame
 import matplotlib.pyplot as plt # Importa matplotlib para crear gráficos y visualizaciones
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox # Importa OffsetImage y AnnotationBbox para manejar imágenes en los gráficos
-#import matplotlib.patches as patches # Importa patches para crear formas en los gráficos
+import matplotlib.patches as patches # Importa patches para crear formas en los gráficos
 from PIL import Image # Importa Image de PIL para manejar imágenes
 from io import BytesIO # Importa BytesIO para manejar datos binarios en memoria
 
